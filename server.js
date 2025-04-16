@@ -1,15 +1,14 @@
-import express from "express";
 import { createServer } from "http";
-import { configDotenv } from "dotenv";
+import config from "./config/config.js";
+import app from "./app.js";
+import connect from "./connection.js"
 
-configDotenv();
-
-const app = express();
-
+const PORT = config.PORT || 5000;
 const httpServer = createServer(app);
-
-const PORT = process.env.PORT || 5000;
 
 httpServer.listen(PORT, () => {
     console.log(`Server started at port: ${PORT}`);
 })
+
+connect.then(() => console.log('MongoDB connected')).catch(err => console.log('Error while connecting to MongoDB: ', err))
+
