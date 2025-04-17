@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/YugShrivastava/TypeFrenzy-Backend#readme",
   "dependencies": {
+    "axios": "^1.8.4",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
